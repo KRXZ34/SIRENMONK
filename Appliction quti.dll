@@ -1,0 +1,18 @@
+using UnityEngine;
+
+public class QuitOnStartVR : MonoBehaviour
+{
+    void Start()
+    {
+        // Log a message indicating the application is exiting
+        Debug.Log("Application started in VR mode. Exiting...");
+
+        // Quit the application
+        Application.Quit();
+
+        // If running in the editor, stop playing
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
+}
